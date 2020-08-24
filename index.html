@@ -16,35 +16,18 @@
       <vellum-sheet class="char-sheet" style="width: 900px;">
         <div class="character-content">
 
-          <vellum-sheet-group id="details">
-
-            <div class="row">
-              <vellum-sheet-field id="player-name" label="Player Name" class="small">
-              </vellum-sheet-field>
-
-              <vellum-sheet-field id="class" label="Class &amp; Level" class="small">
-                1st Level Fighter
-              </vellum-sheet-field>
-
-              <vellum-sheet-field id="background" label="Background" class="small">
-                Folk Hero
-              </vellum-sheet-field>
-
-              <vellum-sheet-field id="race" label="Race" class="small">
-                Dwarf
-              </vellum-sheet-field>
-
-              <vellum-sheet-field id="xp" label="Experience Points" class="small">
-              </vellum-sheet-field>
-            </div>
-
-          </vellum-sheet-group>
-
-          <header id="name" class="charateristics">
+          <header class="charateristics">
             <p>I am</p>
 
-            <vellum-sheet-field label="Character Name">Bruenor</vellum-sheet-field>
+            <vellum-sheet-field label="Title/Character Name" class="long">Captain Bruenor</vellum-sheet-field>
 
+            <p>The</p>
+
+            <vellum-sheet-field label="Level/Race/Class" class="long">1st Level Dwarf Fighter</vellum-sheet-field>
+
+          </header>
+
+          <header class="charateristics">
             <p>Who</p>
 
             <vellum-sheet-field label="Bond" class="long">Aspires to reclaim my homeland</vellum-sheet-field>
@@ -56,21 +39,23 @@
             <vellum-sheet-field label="Flaw" class="long">I am soft of heart and often show unwarranted mercy</vellum-sheet-field>
           </header>
 
-          <vellum-sheet-group id="details">
+          <header id="personality-traits" class="charateristics">
+            <p>I am</p>
+
+            <vellum-sheet-field label="Personality trait 1" class="long">Gruff</vellum-sheet-field>
+
+            <p>And</p>
+
+            <vellum-sheet-field label="Personality trait 2" class="long">Sometimes forgetful</vellum-sheet-field>
+          </header>
+
+          <vellum-sheet-group id="allegiances">
           <header id="allegiances" class="charateristics">
             <vellum-sheet-field label="Major Allegiance" class="long">My Friends</vellum-sheet-field>
             <vellum-sheet-field label="Medium Allegiance" class="long">Mithril Dwarves</vellum-sheet-field>
             <vellum-sheet-field label="Minor Allegiance" class="long">Fairness (Good)</vellum-sheet-field>
           </header>
         </vellum-sheet-group>
-
-          <header id="personality-trait-1" class="charateristics">
-            <vellum-sheet-field label="Personality trait 1" class="long">My gruff, snarling demeanour hides a soft heart</vellum-sheet-field>
-          </header>
-
-          <header id="personality-trait-2" class="charateristics">
-            <vellum-sheet-field label="Personality trait 2" class="long">I am sometimes forgetful</vellum-sheet-field>
-          </header>
 
         </div>
       </vellum-sheet>
