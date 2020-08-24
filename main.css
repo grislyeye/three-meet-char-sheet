@@ -1,39 +1,216 @@
-vellum-sheet.custom {
-  display: grid;
-  grid-template-columns: 49% 49%;
-  grid-template-rows: 5em auto auto;
-  grid-auto-flow: row;
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400,400italic,700italic,700);
 
-  padding: 1em;
+* {
+  font-family: 'Alegreya', serif;
+}
 
+.char-sheet {
   box-sizing:border-box;
 
-  width: 750px;
-  height: 1000px;
+  width: 8.3in;
+  height: 11.5in;
+
+  margin-top: 0.5cm;
+  page-break-after: always;
 }
 
-vellum-sheet.custom h2 {
-  font-size: 2.2em;
-  margin-top: 0;
-  margin-bottom: 0;
+.character-content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: 35% 35% 25%;
+  grid-template-columns: 20% auto 45%;
 }
 
-vellum-sheet.custom h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+.character-content > div,
+.character-content > header,
+.character-content > vellum-sheet-box {
+  margin: 0.5em;
 }
 
-vellum-sheet.custom p {
-  margin-top: 0;
-  margin-bottom: 0;
+.character-content vellum-sheet-box ul li {
+  margin: 0.5em;
+  padding: 0;
 }
 
-vellum-sheet.custom table {
+.character-content h1 {
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  border: 0;
+}
+
+/* .characteristics */
+
+#characteristics {
+  grid-row: 1 / 1;
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.characteristic {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.characteristic vellum-sheet-field {
+  margin-right: 1em;
+  min-width: 150px;
+  min-height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-weight: normal;
+}
+
+.characteristic vellum-sheet-field.long {
   width: 100%;
 }
 
-vellum-sheet.custom table td.notes {
-  width: 80%;
+.characteristic h2 {
+  padding: 0;
+  margin: 0.5em 1em 0 0;
+  text-align: left;
+  border: 0;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.character-content #characteristics > * {
+  /*margin-top: 0.5em;*/
+  margin: 0.5em;
+}
+
+.character-content #characteristics .list {
+  flex: 1;
+}
+
+.character-content #characteristics vellum-sheet-box {
+  min-height: 5.5em;
+}
+
+.character-content #allegiances {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* attributes */
+
+.character-content #abilities {
+  grid-column: 1 / 1;
+  grid-row:  2 / 2;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.character-content #abilities > .box {
+  background: white;
+  border: 1px var(--char-sheet-border-color, black) solid;
+  padding: 0.5em;
+  border-radius: 5px;
+  text-align: center;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.character-content #abilities .box .score {
+  font-size: 3em;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.character-content #abilities .box .modifier {
+  margin: 0;
+  padding: 0;
+}
+
+.character-content #abilities .box h2 {
+  border: 0 none;
+  font-weight: normal;
+  padding: 0;
+}
+
+.character-content #abilities > .box + .box {
+  margin-top: 0.5em;
+}
+
+/* combat-stats */
+
+.character-content #combat-stats {
+  display: flex;
+  flex-direction: column;
+
+  grid-column: 2 / 2;
+  grid-row:  2 / 2;
+}
+
+.character-content #combat-stats > div {
+  height: 100%;
+}
+
+.character-content #combat-stats > div + div {
+  margin-top: 0.5em;
+}
+
+/* .value */
+
+.character-content .value {
+  background: white;
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  align-content: center;
+}
+
+.character-content .value p {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  padding-right: 0.5rem;
+}
+
+.character-content .value h2 {
+  font-weight: normal;
+  font-size: 0.9em;
+  border-left: 1px var(--char-sheet-border-color, black) solid;
+  padding: 0;
+  margin: 0;
+  padding-left: 0.5rem;
+  width: 60%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.character-content .value p {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  padding-right: 0.5rem;
+  width: 40%;
+  text-align: center;
+}
+
+.character-content #proficiencies {
+  grid-column: 1 / 3;
+  grid-row:  3 / 3;
+}
+
+.character-content #features {
+  grid-column: 3 / 3;
+  grid-row:  2 / 2;
+}
+
+.character-content #notes {
+  grid-column: 3 / 4;
+  grid-row:  3 / 3;
 }
