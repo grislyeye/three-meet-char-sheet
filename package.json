@@ -1,34 +1,28 @@
 {
-  "name": "vellum-sheet",
-  "version": "0.1.0",
-  "description": "Web component for displaying 5th Edition D&D character sheets",
+  "name": "three-meet-char-sheet",
+  "version": "0.0.0",
+  "description": "Character sheets for Three Meet ",
   "keywords": [
     "lit",
     "lit-element",
     "webcomponent"
   ],
   "author": "R.G. Wood <ric@grislyeye.com> (https://grislyeye.com)",
-  "contributors": [
-    "Val Markovic <val@markovic.io> (http://val.markovic.io)"
-  ],
   "license": "Apache 2.0",
   "dependencies": {
-    "lit-element": "^2.4.0",
-    "microtesia.js": "^0.1.2"
+    "pagedjs": "^0.1.43",
+    "vellum-sheet": "^0.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.7.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-html": "^6.0.3",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-lit": "^1.2.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "polymer-cli": "^1.9.11"
+    "grunt-cli": "^1.3.2",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "scribe-cli": "^2.0.5"
   },
   "scripts": {
-    "test": "eslint *.js lib/*.js && polymer lint",
-    "start": "polymer serve --open"
+    "clean": "grunt clean",
+    "start": "grunt start",
+    "build": "scribe publish --page-format A4 index.html dist/"
   }
 }
