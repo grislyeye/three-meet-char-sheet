@@ -4,14 +4,10 @@
   <head>
     <title>Three Meet Character Sheet</title>
 
-    <!-- <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-box.js"></script>
+    <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-box.js"></script>
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-field.js"></script>
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-group.js"></script>
-    <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet.js"></script> -->
-    <script type="module" src="./vellum-sheet-box.js"></script>
-    <script type="module" src="./vellum-sheet-field.js"></script>
-    <script type="module" src="./vellum-sheet-group.js"></script>
-    <script type="module" src="./vellum-sheet.js"></script>
+    <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet.js"></script>
 
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
@@ -132,6 +128,137 @@
         <vellum-sheet-box id="notes" title="Equipment &amp; Notes">
           <ul>
             <li></li>
+          </ul>
+        </vellum-sheet-box>
+
+      </div>
+    </vellum-sheet>
+
+    <vellum-sheet class="char-sheet">
+      <div class="character-content">
+
+        <div id="characteristics">
+
+          <div class="characteristic">
+
+            <h2>I am</h2>
+
+            <vellum-sheet-field label="Title/Character Name" class="small long">Captain Bruinheim</vellum-sheet-field>
+
+            <h2>The</h2>
+
+            <vellum-sheet-field label="Level/Archetype/Background" class="small long">1st Level Defender Soldier</vellum-sheet-field>
+
+          </div>
+
+          <div class="characteristic">
+            <h2>Who</h2>
+
+            <vellum-sheet-field label="Bond" class="small long">Aspires to reclaim my homeland</vellum-sheet-field>
+
+          </div>
+
+          <div class="characteristic">
+            <h2>But</h2>
+
+            <vellum-sheet-field label="Flaw" class="small long">I am soft of heart and often show unwarranted mercy</vellum-sheet-field>
+          </div>
+
+          <div id="personality-traits" class="characteristic">
+            <h2>I am</h2>
+
+            <vellum-sheet-field label="Trait" class="small long">Gruff</vellum-sheet-field>
+
+            <h2>And</h2>
+
+            <vellum-sheet-field label="Trait" class="small long">Sometimes forgetful</vellum-sheet-field>
+          </div>
+
+          <vellum-sheet-group id="allegiances" class="characteristic">
+            <vellum-sheet-field label="Major Allegiance" class="small long">My Friends</vellum-sheet-field>
+            <vellum-sheet-field label="Medium Allegiance" class="small long">Mithrain Kingdom</vellum-sheet-field>
+            <vellum-sheet-field label="Minor Allegiance" class="small long">Honour</vellum-sheet-field>
+          </vellum-sheet-group>
+
+        </div>
+
+        <vellum-sheet-group id="abilities">
+          <div class="might box">
+            <p class="score">+3</p>
+            <p class="modifier">Might</p>
+          </div>
+
+          <div class="cunning box">
+            <p class="score">-1</p>
+            <p class="modifier">Cunning</p>
+          </div>
+
+          <div class="might box">
+            <p class="score">+1</p>
+            <p class="modifier">Wisdom</p>
+          </div>
+        </vellum-sheet-group>
+
+        <vellum-sheet-group id="combat-stats">
+
+          <div class="value box">
+            <h2>Proficiency</h2>
+            <p>+2</p>
+          </div>
+
+          <div class="value box">
+            <h2>Health</h2>
+            <p>13</p>
+          </div>
+
+          <div class="value box">
+            <h2>Current Health</h2>
+            <p></p>
+          </div>
+
+          <div class="value box">
+            <h2>Defence</h2>
+            <p>17</p>
+          </div>
+
+          <div class="value box">
+            <h2>Melee Damage</h2>
+            <p>1d8 + 3</p>
+          </div>
+
+          <div class="value box">
+            <h2>Ranged Damage</h2>
+            <p>1d6 - 1</p>
+          </div>
+
+        </vellum-sheet-group>
+
+        <vellum-sheet-box id="proficiencies" title="Proficiencies">
+          <ul>
+            <li>All weapons, shields and armour</li>
+            <li>Might saves</li>
+            <li>Athletics</li>
+            <li>Intimidation</li>
+            <li>Perception</li>
+            <li>Smith's Tools</li>
+          </ul>
+        </vellum-sheet-box>
+
+        <vellum-sheet-box id="features" title="Features">
+          <ul>
+            <li>Veteran's Eye</li>
+            <li>Protection</li>
+            <li>Second Wind</li>
+            <li>Protection</li>
+          </ul>
+        </vellum-sheet-box>
+
+        <vellum-sheet-box id="notes" title="Equipment &amp; Notes">
+          <ul>
+            <li>Shield (+2 Defence)</li>
+            <li>Chain Mail (Defence 16)</li>
+            <li>Longsword (1d8)</li>
+            <li>Shortbow (1d8)</li>
           </ul>
         </vellum-sheet-box>
 
