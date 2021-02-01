@@ -1,6 +1,6 @@
 # Three Meet Character Sheet
 
-Character sheets for [Three Meet](???)
+Character sheets for [Three Meet](https://grislyeye.github.io/three-meet/)
 
 ## Hacking
 
