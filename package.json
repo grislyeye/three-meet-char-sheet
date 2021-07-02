@@ -24,7 +24,7 @@
   "scripts": {
     "clean": "grunt clean",
     "start": "grunt start",
-    "build": "scribe publish --page-format A4 demo.html dist/documents",
+    "build": "scribe publish --page-format A4 demo.html dist/documents/",
     "deploy": "grunt copy && gh-pages -t -d ./dist/html"
   }
 }
