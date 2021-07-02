@@ -23,112 +23,74 @@
 
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Title/Character Name" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Title/Character Name" editable="true" class="small long"></vellum-sheet-field>
 
             <h2>The</h2>
 
-            <vellum-sheet-field label="Level/Archetype/Background" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Level/Archetype/Background" editable="true" class="small long"></vellum-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>Who</h2>
 
-            <vellum-sheet-field label="Bond" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Bond" editable="true" class="small long"></vellum-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>But</h2>
 
-            <vellum-sheet-field label="Flaw" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Flaw" editable="true" class="small long"></vellum-sheet-field>
           </div>
 
           <div id="personality-traits" class="characteristic">
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Trait" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Trait 1" editable="true" class="small long"></vellum-sheet-field>
 
             <h2>And</h2>
 
-            <vellum-sheet-field label="Trait" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Trait 2" editable="true" class="small long"></vellum-sheet-field>
           </div>
 
           <vellum-sheet-group id="allegiances" class="characteristic">
-            <vellum-sheet-field label="Major Allegiance" class="small long"></vellum-sheet-field>
-            <vellum-sheet-field label="Medium Allegiance" class="small long"></vellum-sheet-field>
-            <vellum-sheet-field label="Minor Allegiance" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Major Allegiance" editable="true" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Medium Allegiance" editable="true" class="small long"></vellum-sheet-field>
+            <vellum-sheet-field label="Minor Allegiance" editable="true" class="small long"></vellum-sheet-field>
           </vellum-sheet-group>
 
         </div>
 
         <vellum-sheet-group id="abilities">
-          <div class="might box">
-            <p class="score"></p>
-            <p class="modifier">Might</p>
-          </div>
-
-          <div class="cunning box">
-            <p class="score"></p>
-            <p class="modifier">Cunning</p>
-          </div>
-
-          <div class="might box">
-            <p class="score"></p>
-            <p class="modifier">Wisdom</p>
-          </div>
+          <vellum-sheet-field label="Might" editable="true" pattern="^[-+]?[0-9]$" class="box"></vellum-sheet-field>
+          <vellum-sheet-field label="Cunning" editable="true" class="box"></vellum-sheet-field>
+          <vellum-sheet-field label="Wisdom" editable="true" class="box"></vellum-sheet-field>
         </vellum-sheet-group>
 
         <vellum-sheet-group id="combat-stats">
 
-          <div class="value box">
-            <h2>Proficiency</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Proficiency" editable="true" class="horizontal value box"></vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Health</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Health" editable="true" class="horizontal value box"></vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Current Health</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Current Health" editable="true" class="horizontal value box"></vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Defence</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Defence" editable="true" class="horizontal value box"></vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Melee Damage</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Melee Damage" editable="true" class="horizontal value box"></vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Ranged Damage</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Ranged Damage" editable="true" class="horizontal value box"></vellum-sheet-field>
 
         </vellum-sheet-group>
 
-        <vellum-sheet-box id="proficiencies" title="Proficiencies">
-          <ul>
-            <li></li>
-          </ul>
+        <vellum-sheet-box id="proficiencies" editable="true" label="Proficiencies">
         </vellum-sheet-box>
 
-        <vellum-sheet-box id="features" title="Features">
-          <ul>
-            <li></li>
-          </ul>
+        <vellum-sheet-box id="features" editable="true" label="Features">
         </vellum-sheet-box>
 
-        <vellum-sheet-box id="notes" title="Equipment &amp; Notes">
-          <ul>
-            <li></li>
-          </ul>
+        <vellum-sheet-box id="notes" editable="true" label="Equipment &amp; Notes">
         </vellum-sheet-box>
 
       </div>
@@ -167,11 +129,11 @@
           <div id="personality-traits" class="characteristic">
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Trait" class="small long">Gruff</vellum-sheet-field>
+            <vellum-sheet-field label="Trait 1" class="small long">Gruff</vellum-sheet-field>
 
             <h2>And</h2>
 
-            <vellum-sheet-field label="Trait" class="small long">Sometimes forgetful</vellum-sheet-field>
+            <vellum-sheet-field label="Trait 2" class="small long">Sometimes forgetful</vellum-sheet-field>
           </div>
 
           <vellum-sheet-group id="allegiances" class="characteristic">
@@ -183,57 +145,28 @@
         </div>
 
         <vellum-sheet-group id="abilities">
-          <div class="might box">
-            <p class="score">+3</p>
-            <p class="modifier">Might</p>
-          </div>
-
-          <div class="cunning box">
-            <p class="score">-1</p>
-            <p class="modifier">Cunning</p>
-          </div>
-
-          <div class="might box">
-            <p class="score">0</p>
-            <p class="modifier">Wisdom</p>
-          </div>
+          <vellum-sheet-field label="Might" class="box">+3</vellum-sheet-field>
+          <vellum-sheet-field label="Cunning" class="box">-1</vellum-sheet-field>
+          <vellum-sheet-field label="Wisdom" class="box">0</vellum-sheet-field>
         </vellum-sheet-group>
 
         <vellum-sheet-group id="combat-stats">
 
-          <div class="value box">
-            <h2>Proficiency</h2>
-            <p>+2</p>
-          </div>
+          <vellum-sheet-field label="Proficiency" class="horizontal value box">+2</vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Health</h2>
-            <p>13</p>
-          </div>
+          <vellum-sheet-field label="Health" class="horizontal value box">13</vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Current Health</h2>
-            <p></p>
-          </div>
+          <vellum-sheet-field label="Current Health" class="horizontal value box">+2</vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Defence</h2>
-            <p>17</p>
-          </div>
+          <vellum-sheet-field label="Defence"  class="horizontal value box">17</vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Melee Damage</h2>
-            <p>1d8 + 3</p>
-          </div>
+          <vellum-sheet-field label="Melee Damage" class="horizontal value box">1d8 + 3</vellum-sheet-field>
 
-          <div class="value box">
-            <h2>Ranged Damage</h2>
-            <p>1d6 - 1</p>
-          </div>
+          <vellum-sheet-field label="Ranged Damage" class="horizontal value box">1d6 - 1</vellum-sheet-field>
 
         </vellum-sheet-group>
 
-        <vellum-sheet-box id="proficiencies" title="Proficiencies">
+        <vellum-sheet-box id="proficiencies" label="Proficiencies">
           <ul>
             <li>All weapons, shields and armour</li>
             <li>Might saves</li>
@@ -244,7 +177,7 @@
           </ul>
         </vellum-sheet-box>
 
-        <vellum-sheet-box id="features" title="Features">
+        <vellum-sheet-box id="features" label="Features">
           <ul>
             <li>Veteran's Eye</li>
             <li>Protection</li>
@@ -253,7 +186,7 @@
           </ul>
         </vellum-sheet-box>
 
-        <vellum-sheet-box id="notes" title="Equipment &amp; Notes">
+        <vellum-sheet-box id="notes" label="Equipment &amp; Notes">
           <ul>
             <li>Shield (+2 Defence)</li>
             <li>Chain Mail (Defence 16)</li>
