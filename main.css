@@ -110,32 +110,10 @@
 .character-content #abilities > .box {
   background: white;
   border: 1px var(--char-sheet-border-color, black) solid;
-  padding: 0.5em;
+  font-size: 2em;
   border-radius: 5px;
   text-align: center;
   height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.character-content #abilities .box .score {
-  font-size: 3em;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.character-content #abilities .box .modifier {
-  margin: 0;
-  padding: 0;
-}
-
-.character-content #abilities .box h2 {
-  border: 0 none;
-  font-weight: normal;
-  padding: 0;
 }
 
 .character-content #abilities > .box + .box {
@@ -162,42 +140,21 @@
 
 /* .value */
 
-.character-content .value {
+vellum-sheet-field.value.box {
   background: white;
-  padding: 0.5em;
+  padding: 8px;
   border-radius: 5px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   align-content: center;
-}
-
-.character-content .value p {
+  --vellum-sheet-input-width: 40%;
   font-size: 1.5em;
-  padding: 0;
-  margin: 0;
-  padding-right: 0.5rem;
+  margin-top: 0.2em;
 }
 
-.character-content .value h2 {
-  font-weight: normal;
-  font-size: 0.9em;
-  border-left: 1px var(--char-sheet-border-color, black) solid;
-  padding: 0;
-  margin: 0;
-  padding-left: 0.5rem;
-  width: 60%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-
-.character-content .value p {
-  font-size: 1.5em;
-  padding: 0;
-  margin: 0;
-  padding-right: 0.5rem;
-  width: 40%;
-  text-align: center;
+.value.box + .value.box {
+  margin-top: 0.5em;
 }
 
 .character-content #proficiencies {
