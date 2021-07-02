@@ -14,15 +14,18 @@
     "vellum-sheet": "^0.3.0"
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "grunt-cli": "^1.3.2",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "scribe-cli": "^2.0.5"
   },
   "scripts": {
     "clean": "grunt clean",
     "start": "grunt start",
-    "build": "scribe publish --page-format A4 index.html dist/"
+    "build": "scribe publish --page-format A4 demo.html dist/documents",
+    "deploy": "grunt copy && gh-pages -t -d ./dist/html"
   }
 }
