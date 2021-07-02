@@ -10,7 +10,6 @@
   "author": "R.G. Wood <ric@grislyeye.com> (https://grislyeye.com)",
   "license": "Apache 2.0",
   "dependencies": {
-    "pagedjs": "^0.1.43",
     "vellum-sheet": "^0.3.0"
   },
   "devDependencies": {
