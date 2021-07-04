@@ -171,3 +171,7 @@ vellum-sheet-field.value.box {
   grid-column: 3 / 4;
   grid-row:  3 / 3;
 }
+
+#connect-button {
+  float: left;
+}

@@ -10,11 +10,43 @@
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet.js"></script>
 
     <link rel="stylesheet" type="text/css" href="main.css" />
+
+    <script type="module" src="lib/web-rtc.js"></script>
+
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="node_modules/@kor-ui/kor/index.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/@kor-ui/kor/kor-styles.css"
+    />
   </head>
 
   <body>
 
+    <kor-modal id="offer-modal" label="Offer" height="150px" width="320px" flex-direction="Column">
+      <kor-input id="link-output" style="width: 320px;" label="Link" type="text"></kor-input>
+
+      <kor-button id="accept-button" label="Accept Answer" color="Tertiary" onclick="showAcceptAnswer()"></kor-button>
+    </kor-modal>
+
+    <kor-modal id="answer-modal" label="Answer" height="150px" width="320px" flex-direction="Column">
+      <kor-input id="answer-link-output" style="width: 320px;" label="Link" type="text"></kor-input>
+    </kor-modal>
+
+    <kor-modal id="accept-answer-modal" label="Accept Answer" height="150px" width="320px" flex-direction="Column">
+      <kor-input id="answer-input" style="width: 320px;" label="Answer" type="text"></kor-input>
+
+      <kor-button label="Accept" color="Tertiary" onclick="acceptAnswer()"></kor-button>
+    </kor-modal>
+
     <vellum-sheet class="char-sheet">
+
+      <kor-button id="connect-button" label="Offer" color="Tertiary" onclick="createOffer()"></kor-button>
+
       <div class="character-content">
 
         <div id="characteristics">

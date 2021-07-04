@@ -10,6 +10,7 @@
   "author": "R.G. Wood <ric@grislyeye.com> (https://grislyeye.com)",
   "license": "Apache 2.0",
   "dependencies": {
+    "@kor-ui/kor": "^1.8.2",
     "vellum-sheet": "^0.3.0"
   },
   "devDependencies": {
