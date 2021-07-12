@@ -11,6 +11,7 @@
   "license": "Apache 2.0",
   "dependencies": {
     "@kor-ui/kor": "^1.8.2",
+    "simple-peer": "^9.11.0",
     "vellum-sheet": "^0.3.0"
   },
   "devDependencies": {

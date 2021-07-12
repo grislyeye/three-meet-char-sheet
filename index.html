@@ -11,7 +11,8 @@
 
     <link rel="stylesheet" type="text/css" href="main.css" />
 
-    <script type="module" src="lib/web-rtc.js"></script>
+    <script src="node_modules/simple-peer/simplepeer.min.js"></script>
+    <script type="module" src="lib/sync.js"></script>
 
     <script
       type="text/javascript"
@@ -37,6 +38,12 @@
       <kor-input id="answer-link-output" style="width: 320px;" label="Link" type="text"></kor-input>
     </kor-modal>
 
+    <kor-modal id="accept-offer-modal" label="Accept Offer" height="150px" width="320px" flex-direction="Column">
+      <kor-input id="offer-input" style="width: 320px;" label="Offer" type="text"></kor-input>
+
+      <kor-button label="Accept" color="Tertiary" onclick="acceptOffer()"></kor-button>
+    </kor-modal>
+
     <kor-modal id="accept-answer-modal" label="Accept Answer" height="150px" width="320px" flex-direction="Column">
       <kor-input id="answer-input" style="width: 320px;" label="Answer" type="text"></kor-input>
 
@@ -45,7 +52,7 @@
 
     <vellum-sheet class="char-sheet">
 
-      <kor-button id="connect-button" label="Offer" color="Tertiary" onclick="createOffer()"></kor-button>
+      <kor-button id="connect-button" label="Answer" color="Tertiary" onclick="showAcceptOffer()"></kor-button>
 
       <div class="character-content">
 
