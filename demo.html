@@ -5,7 +5,7 @@
     <title>Three Meet Character Sheet</title>
 
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-box.js"></script>
-    <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-field.js"></script>
+    <script type="module" src="./node_modules/vellum-sheet/dist/sync-sheet-field.js"></script>
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-group.js"></script>
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet.js"></script>
 
@@ -23,64 +23,64 @@
 
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Title/Character Name" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Title/Character Name" editable="true" class="small long"></sync-sheet-field>
 
             <h2>The</h2>
 
-            <vellum-sheet-field label="Level/Archetype/Background" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Level/Archetype/Background" editable="true" class="small long"></sync-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>Who</h2>
 
-            <vellum-sheet-field label="Bond" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Bond" editable="true" class="small long"></sync-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>But</h2>
 
-            <vellum-sheet-field label="Flaw" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Flaw" editable="true" class="small long"></sync-sheet-field>
           </div>
 
           <div id="personality-traits" class="characteristic">
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Trait 1" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Trait 1" editable="true" class="small long"></sync-sheet-field>
 
             <h2>And</h2>
 
-            <vellum-sheet-field label="Trait 2" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Trait 2" editable="true" class="small long"></sync-sheet-field>
           </div>
 
           <vellum-sheet-group id="allegiances" class="characteristic">
-            <vellum-sheet-field label="Major Allegiance" editable="true" class="small long"></vellum-sheet-field>
-            <vellum-sheet-field label="Medium Allegiance" editable="true" class="small long"></vellum-sheet-field>
-            <vellum-sheet-field label="Minor Allegiance" editable="true" class="small long"></vellum-sheet-field>
+            <sync-sheet-field label="Major Allegiance" editable="true" class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Medium Allegiance" editable="true" class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Minor Allegiance" editable="true" class="small long"></sync-sheet-field>
           </vellum-sheet-group>
 
         </div>
 
         <vellum-sheet-group id="abilities">
-          <vellum-sheet-field label="Might" editable="true" pattern="^[-+]?[0-9]$" class="box"></vellum-sheet-field>
-          <vellum-sheet-field label="Cunning" editable="true" class="box"></vellum-sheet-field>
-          <vellum-sheet-field label="Wisdom" editable="true" class="box"></vellum-sheet-field>
+          <sync-sheet-field label="Might" editable="true" pattern="^[-+]?[0-9]$" class="box"></sync-sheet-field>
+          <sync-sheet-field label="Cunning" editable="true" class="box"></sync-sheet-field>
+          <sync-sheet-field label="Wisdom" editable="true" class="box"></sync-sheet-field>
         </vellum-sheet-group>
 
         <vellum-sheet-group id="combat-stats">
 
-          <vellum-sheet-field label="Proficiency" editable="true" class="horizontal value box"></vellum-sheet-field>
+          <sync-sheet-field label="Proficiency" editable="true" class="horizontal value box"></sync-sheet-field>
 
-          <vellum-sheet-field label="Health" editable="true" class="horizontal value box"></vellum-sheet-field>
+          <sync-sheet-field label="Health" editable="true" class="horizontal value box"></sync-sheet-field>
 
-          <vellum-sheet-field label="Current Health" editable="true" class="horizontal value box"></vellum-sheet-field>
+          <sync-sheet-field label="Current Health" editable="true" class="horizontal value box"></sync-sheet-field>
 
-          <vellum-sheet-field label="Defence" editable="true" class="horizontal value box"></vellum-sheet-field>
+          <sync-sheet-field label="Defence" editable="true" class="horizontal value box"></sync-sheet-field>
 
-          <vellum-sheet-field label="Melee Damage" editable="true" class="horizontal value box"></vellum-sheet-field>
+          <sync-sheet-field label="Melee Damage" editable="true" class="horizontal value box"></sync-sheet-field>
 
-          <vellum-sheet-field label="Ranged Damage" editable="true" class="horizontal value box"></vellum-sheet-field>
+          <sync-sheet-field label="Ranged Damage" editable="true" class="horizontal value box"></sync-sheet-field>
 
         </vellum-sheet-group>
 
@@ -105,64 +105,64 @@
 
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Title/Character Name" class="small long">Captain Bruinheim</vellum-sheet-field>
+            <sync-sheet-field label="Title/Character Name" class="small long">Captain Bruinheim</sync-sheet-field>
 
             <h2>The</h2>
 
-            <vellum-sheet-field label="Level/Archetype/Background" class="small long">1st Level Defender Soldier</vellum-sheet-field>
+            <sync-sheet-field label="Level/Archetype/Background" class="small long">1st Level Defender Soldier</sync-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>Who</h2>
 
-            <vellum-sheet-field label="Bond" class="small long">Aspires to reclaim my homeland</vellum-sheet-field>
+            <sync-sheet-field label="Bond" class="small long">Aspires to reclaim my homeland</sync-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>But</h2>
 
-            <vellum-sheet-field label="Flaw" class="small long">I am soft of heart and often show unwarranted mercy</vellum-sheet-field>
+            <sync-sheet-field label="Flaw" class="small long">I am soft of heart and often show unwarranted mercy</sync-sheet-field>
           </div>
 
           <div id="personality-traits" class="characteristic">
             <h2>I am</h2>
 
-            <vellum-sheet-field label="Trait 1" class="small long">Gruff</vellum-sheet-field>
+            <sync-sheet-field label="Trait 1" class="small long">Gruff</sync-sheet-field>
 
             <h2>And</h2>
 
-            <vellum-sheet-field label="Trait 2" class="small long">Sometimes forgetful</vellum-sheet-field>
+            <sync-sheet-field label="Trait 2" class="small long">Sometimes forgetful</sync-sheet-field>
           </div>
 
           <vellum-sheet-group id="allegiances" class="characteristic">
-            <vellum-sheet-field label="Major Allegiance" class="small long">My Friends</vellum-sheet-field>
-            <vellum-sheet-field label="Medium Allegiance" class="small long">Mithrain Kingdom</vellum-sheet-field>
-            <vellum-sheet-field label="Minor Allegiance" class="small long">Honour</vellum-sheet-field>
+            <sync-sheet-field label="Major Allegiance" class="small long">My Friends</sync-sheet-field>
+            <sync-sheet-field label="Medium Allegiance" class="small long">Mithrain Kingdom</sync-sheet-field>
+            <sync-sheet-field label="Minor Allegiance" class="small long">Honour</sync-sheet-field>
           </vellum-sheet-group>
 
         </div>
 
         <vellum-sheet-group id="abilities">
-          <vellum-sheet-field label="Might" class="box">+3</vellum-sheet-field>
-          <vellum-sheet-field label="Cunning" class="box">-1</vellum-sheet-field>
-          <vellum-sheet-field label="Wisdom" class="box">0</vellum-sheet-field>
+          <sync-sheet-field label="Might" class="box">+3</sync-sheet-field>
+          <sync-sheet-field label="Cunning" class="box">-1</sync-sheet-field>
+          <sync-sheet-field label="Wisdom" class="box">0</sync-sheet-field>
         </vellum-sheet-group>
 
         <vellum-sheet-group id="combat-stats">
 
-          <vellum-sheet-field label="Proficiency" class="horizontal value box">+2</vellum-sheet-field>
+          <sync-sheet-field label="Proficiency" class="horizontal value box">+2</sync-sheet-field>
 
-          <vellum-sheet-field label="Health" class="horizontal value box">13</vellum-sheet-field>
+          <sync-sheet-field label="Health" class="horizontal value box">13</sync-sheet-field>
 
-          <vellum-sheet-field label="Current Health" class="horizontal value box">+2</vellum-sheet-field>
+          <sync-sheet-field label="Current Health" class="horizontal value box">+2</sync-sheet-field>
 
-          <vellum-sheet-field label="Defence"  class="horizontal value box">17</vellum-sheet-field>
+          <sync-sheet-field label="Defence"  class="horizontal value box">17</sync-sheet-field>
 
-          <vellum-sheet-field label="Melee Damage" class="horizontal value box">1d8 + 3</vellum-sheet-field>
+          <sync-sheet-field label="Melee Damage" class="horizontal value box">1d8 + 3</sync-sheet-field>
 
-          <vellum-sheet-field label="Ranged Damage" class="horizontal value box">1d6 - 1</vellum-sheet-field>
+          <sync-sheet-field label="Ranged Damage" class="horizontal value box">1d6 - 1</sync-sheet-field>
 
         </vellum-sheet-group>
 
