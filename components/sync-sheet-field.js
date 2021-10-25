@@ -20,6 +20,10 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
     }
   }
 
+  get value() {
+    return this.shadowRoot.querySelector('vellum-sheet-field').value
+  }
+
   render() {
     return html`
       <vellum-sheet-field

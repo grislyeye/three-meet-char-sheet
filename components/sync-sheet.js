@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element'
 import '../node_modules/vellum-sheet/dist/vellum-sheet.js'
 import { initializeApp } from 'firebase/app'
-import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, getAuth } from 'firebase/auth'
+import { onAuthStateChanged, signInWithPopup, signInWithCredential, GoogleAuthProvider, getAuth, OAuthCredential } from 'firebase/auth'
 
 class SyncSheet extends LitElement {
 
@@ -17,12 +17,35 @@ class SyncSheet extends LitElement {
     })
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     super.connectedCallback()
 
     const auth = getAuth()
-    if (!auth.currentUser) {
-      signInWithPopup(auth, new GoogleAuthProvider())
+    const credential = this.credential
+
+    if (credential) {
+      await signInWithCredential(auth, credential)
+    } else if (!auth.currentUser) {
+      await signInWithPopup(auth, new GoogleAuthProvider())
+        .then(result => {
+          this.credential = GoogleAuthProvider.credentialFromResult(result)
+        })
+    }
+  }
+
+  set credential(credential) {
+    const json = JSON.stringify(credential.toJSON())
+    document.cookie = `google-credential=${json}; Secure`
+  }
+
+  get credential() {
+    const cookie =
+      document.cookie
+        .split('; ')
+        .find(row => row.startsWith('google-credential='))
+
+    if (cookie) {
+      return OAuthCredential.fromJSON(cookie.split('=')[1])
     }
   }
 
