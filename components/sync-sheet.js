@@ -32,6 +32,7 @@ class SyncSheet extends LitElement {
     const credential = this.credential
 
     if (credential) {
+      // TODO Fix: cannot re-authenticate when oauth credentials expire
       await signInWithCredential(auth, credential)
     } else if (!auth.currentUser) {
       await signInWithPopup(auth, new GoogleAuthProvider())
