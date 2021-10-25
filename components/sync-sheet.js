@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element'
+import { LitElement, html, css } from 'lit-element'
 import '../node_modules/vellum-sheet/dist/vellum-sheet.js'
 import { initializeApp } from 'firebase/app'
 import { onAuthStateChanged, signInWithPopup, signInWithCredential, GoogleAuthProvider, getAuth, OAuthCredential } from 'firebase/auth'
@@ -6,6 +6,14 @@ import { onAuthStateChanged, signInWithPopup, signInWithCredential, GoogleAuthPr
 class SyncSheet extends LitElement {
 
   static get is() { return 'sync-sheet' }
+
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+      }
+    `;
+  }
 
   constructor() {
     super()
