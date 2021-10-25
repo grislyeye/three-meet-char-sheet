@@ -4,51 +4,13 @@
   <head>
     <title>Three Meet Character Sheet</title>
 
-    <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet.js"></script>
     <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-group.js"></script>
-    <script type="module" src="./dist/sync-sheet-field.js"></script>
-    <script type="module" src="./dist/sync-sheet-box.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth.css" />
-
-    <link rel="stylesheet" type="text/css" href="main.css" />
-
-    <script type="text/javascript">
-
-      firebase.initializeApp({
-        apiKey: 'AIzaSyC23ccaZmf-V6Le47vqhfCTaQOG1PN8Ikc',
-        authDomain: 'three-meet-sync.firebaseapp.com',
-        projectId: 'project-990770811259'
-      })
-
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-          var uiConfig = {
-            callbacks: {
-              signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                window.user = authResult.user
-                return false
-              }
-            },
-            signInOptions: [
-              firebase.auth.GoogleAuthProvider.PROVIDER_ID
-            ]
-          }
-
-          var ui = new firebaseui.auth.AuthUI(firebase.auth())
-          ui.start('#firebaseui-auth-container', uiConfig)
-        }
-      })
-    </script>
+    <script type="module" src="./dist/components.js"></script>
   </head>
 
   <body>
 
-    <div id="firebaseui-auth-container"></div>
-
-    <vellum-sheet class="char-sheet">
+    <sync-sheet class="char-sheet">
       <div class="character-content">
 
         <div id="characteristics">
@@ -128,7 +90,7 @@
         </sync-sheet-box>
 
       </div>
-    </vellum-sheet>
+    </sync-sheet>
 
   </body>
 
