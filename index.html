@@ -4,95 +4,13 @@
   <head>
     <title>Three Meet Character Sheet</title>
 
-    <script type="module" src="./node_modules/vellum-sheet/dist/vellum-sheet-group.js"></script>
     <script type="module" src="./dist/components.js"></script>
-
     <link rel="stylesheet" href="main.css"></script>
   </head>
 
   <body>
 
-    <sync-sheet class="char-sheet">
-      <div class="character-content">
-
-        <div id="characteristics">
-
-          <div class="characteristic">
-
-            <h2>I am</h2>
-
-            <sync-sheet-field label="Title/Character Name" editable="true" class="small long"></sync-sheet-field>
-
-            <h2>The</h2>
-
-            <sync-sheet-field label="Level/Archetype/Background" editable="true" class="small long"></sync-sheet-field>
-
-          </div>
-
-          <div class="characteristic">
-            <h2>Who</h2>
-
-            <sync-sheet-field label="Bond" editable="true" class="small long"></sync-sheet-field>
-
-          </div>
-
-          <div class="characteristic">
-            <h2>But</h2>
-
-            <sync-sheet-field label="Flaw" editable="true" class="small long"></sync-sheet-field>
-          </div>
-
-          <div id="personality-traits" class="characteristic">
-            <h2>I am</h2>
-
-            <sync-sheet-field label="Trait 1" editable="true" class="small long"></sync-sheet-field>
-
-            <h2>And</h2>
-
-            <sync-sheet-field label="Trait 2" editable="true" class="small long"></sync-sheet-field>
-          </div>
-
-          <vellum-sheet-group id="allegiances" class="characteristic">
-            <sync-sheet-field label="Major Allegiance" editable="true" class="small long"></sync-sheet-field>
-            <sync-sheet-field label="Medium Allegiance" editable="true" class="small long"></sync-sheet-field>
-            <sync-sheet-field label="Minor Allegiance" editable="true" class="small long"></sync-sheet-field>
-          </vellum-sheet-group>
-
-        </div>
-
-        <vellum-sheet-group id="abilities">
-          <sync-sheet-field label="Might" editable="true" pattern="^[-+]?[0-9]$" class="box"></sync-sheet-field>
-          <sync-sheet-field label="Cunning" editable="true" class="box"></sync-sheet-field>
-          <sync-sheet-field label="Wisdom" editable="true" class="box"></sync-sheet-field>
-        </vellum-sheet-group>
-
-        <vellum-sheet-group id="combat-stats">
-
-          <sync-sheet-field label="Proficiency" editable="true" class="horizontal value box"></sync-sheet-field>
-
-          <sync-sheet-field label="Health" editable="true" class="horizontal value box"></sync-sheet-field>
-
-          <sync-sheet-field label="Current Health" editable="true" class="horizontal value box"></sync-sheet-field>
-
-          <sync-sheet-field label="Defence" editable="true" class="horizontal value box"></sync-sheet-field>
-
-          <sync-sheet-field label="Melee Damage" editable="true" class="horizontal value box"></sync-sheet-field>
-
-          <sync-sheet-field label="Ranged Damage" editable="true" class="horizontal value box"></sync-sheet-field>
-
-        </vellum-sheet-group>
-
-        <sync-sheet-box id="proficiencies" editable="true" label="Proficiencies">
-        </sync-sheet-box>
-
-        <sync-sheet-box id="features" editable="true" label="Features">
-        </sync-sheet-box>
-
-        <sync-sheet-box id="notes" editable="true" label="Equipment &amp; Notes">
-        </sync-sheet-box>
-
-      </div>
-    </sync-sheet>
+    <three-meet-char-sheet class="char-sheet"></three-meet-char-sheet>
 
   </body>
 
