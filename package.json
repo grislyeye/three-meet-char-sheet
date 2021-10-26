@@ -12,6 +12,7 @@
   "dependencies": {
     "@kor-ui/kor": "^1.9.1",
     "firebase": "^9.1.3",
+    "lit-element": "^3.0.1",
     "vellum-sheet": "^0.3.0"
   },
   "devDependencies": {
