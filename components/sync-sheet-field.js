@@ -16,6 +16,9 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
       },
       editable: {
         type: Boolean
+      },
+      email: {
+        type: String
       }
     }
   }
@@ -38,6 +41,7 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
         editable="${this.editable}"
         class="${this.className}"
         @input=${this.syncValue}
+        docid=${this.email}
       ><slot></slot></vellum-sheet-field>`
   }
 

@@ -100,7 +100,7 @@ class GmScreenApp extends LitElement {
           </kor-app-bar>
         </nav>
 
-        ${this.sheet ? html`<gm-screen-sheet-view sheet="${this.sheet}"></gm-screen-sheet-view>` : html``}
+        ${this.sheet ? html`<gm-screen-sheet-view email="${this.sheet}"></gm-screen-sheet-view>` : html``}
       </kor-page>
     `;
   }

@@ -5,6 +5,14 @@ class GmScreenSheetView extends LitElement {
 
   static get is() { return 'gm-screen-sheet-view' }
 
+  static get properties() {
+    return {
+      email: {
+        type: String
+      }
+    }
+  }
+
   static get styles() {
     return css`
       :host {
@@ -34,7 +42,7 @@ class GmScreenSheetView extends LitElement {
   render() {
     return html`
       <div id="view">
-        <three-meet-char-sheet id="char-sheet"></three-meet-char-sheet>
+        <three-meet-char-sheet id="char-sheet" email=${this.email}></three-meet-char-sheet>
       </div>
     `
   }
