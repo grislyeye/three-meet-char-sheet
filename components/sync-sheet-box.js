@@ -1,10 +1,18 @@
-import { LitElement, html } from 'lit-element'
+import { LitElement, html, css } from 'lit-element'
 import '../node_modules/vellum-sheet/dist/vellum-sheet-box.js'
 import { SyncValueBehaviour } from '../lib/sync-value-behaviour.js'
 
 class SyncSheetBox extends SyncValueBehaviour(LitElement) {
 
   static get is() { return 'sync-sheet-box' }
+
+  static get styles() {
+    return css`
+      vellum-sheet-box {
+        height: 100%;
+      }
+    `;
+  }
 
   static get properties() {
     return {
