@@ -30,7 +30,6 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
   set value(value) {
     const inputElement = this.shadowRoot.querySelector('vellum-sheet-field')
     inputElement.value = value
-    inputElement.requestUpdate()
   }
 
   render() {

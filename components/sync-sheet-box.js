@@ -30,7 +30,6 @@ class SyncSheetBox extends SyncValueBehaviour(LitElement) {
   set value(value) {
     const inputElement = this.shadowRoot.querySelector('vellum-sheet-box')
     inputElement.value = value
-    inputElement.requestUpdate()
   }
 
   render() {

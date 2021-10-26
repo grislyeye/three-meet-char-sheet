@@ -24,6 +24,14 @@ class GmScreenApp extends LitElement {
     }
   }
 
+  static get styles() {
+    return css`
+      .hidden {
+        display: none;
+      }
+    `
+  }
+
   constructor() {
     super()
 
@@ -100,7 +108,7 @@ class GmScreenApp extends LitElement {
           </kor-app-bar>
         </nav>
 
-        ${this.sheet ? html`<gm-screen-sheet-view email="${this.sheet}"></gm-screen-sheet-view>` : html``}
+        ${this.renderSheets()}
       </kor-page>
     `;
   }
@@ -111,6 +119,14 @@ class GmScreenApp extends LitElement {
         <kor-tab-item label="${sheet}" @click="${this.changeSheet}">
           <kor-text>${sheet}</kor-text>
         </kor-tab-item>
+      `
+    })
+  }
+
+  renderSheets() {
+    return this.sheets.map(sheet => {
+      return html`
+        <gm-screen-sheet-view class=${this.sheet === sheet ? '' : 'hidden'} email="${sheet}"></gm-screen-sheet-view>
       `
     })
   }
