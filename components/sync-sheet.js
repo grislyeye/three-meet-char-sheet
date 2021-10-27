@@ -15,22 +15,20 @@ class SyncSheet extends LitElement {
     `;
   }
 
-  constructor() {
-    super()
-
-    initializeApp({
-      apiKey: 'AIzaSyC23ccaZmf-V6Le47vqhfCTaQOG1PN8Ikc',
-      authDomain: 'three-meet-sync.firebaseapp.com',
-      projectId: 'three-meet-sync'
-    })
-  }
-
   async connectedCallback() {
     super.connectedCallback()
 
-    onAuthStateChanged(getAuth(), async user => {
-      if (!user) await signInWithPopup(auth, new GoogleAuthProvider())
-    })
+    if(this.editable) {
+      initializeApp({
+        apiKey: 'AIzaSyC23ccaZmf-V6Le47vqhfCTaQOG1PN8Ikc',
+        authDomain: 'three-meet-sync.firebaseapp.com',
+        projectId: 'three-meet-sync'
+      })
+
+      onAuthStateChanged(getAuth(), async user => {
+        if (!user) await signInWithPopup(getAuth(), new GoogleAuthProvider())
+      })
+    }
   }
 
   render() {

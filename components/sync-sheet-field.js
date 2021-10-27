@@ -23,6 +23,11 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
     }
   }
 
+  constructor() {
+    super()
+    this.editable = true
+  }
+
   get value() {
     return this.shadowRoot.querySelector('vellum-sheet-field').value
   }
@@ -36,9 +41,9 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
     return html`
       <vellum-sheet-field
         label=${this.label}
-        lines="${this.label}"
-        editable="${this.editable}"
-        class="${this.className}"
+        lines=${this.label}
+        .editable=${this.editable}
+        class=${this.className}
         @input=${this.syncValue}
         docid=${this.email}
       ><slot></slot></vellum-sheet-field>`

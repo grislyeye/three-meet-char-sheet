@@ -42,7 +42,7 @@ class GmScreenSheetView extends LitElement {
   render() {
     return html`
       <div id="view">
-        <three-meet-char-sheet id="char-sheet" email=${this.email}></three-meet-char-sheet>
+        <three-meet-char-sheet id="char-sheet" editable="true" email=${this.email}></three-meet-char-sheet>
       </div>
     `
   }
