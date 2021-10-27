@@ -47,7 +47,7 @@ class SyncSheetBox extends SyncValueBehaviour(LitElement) {
         .editable=${this.editable}
         class=${this.className}
         @input=${this.syncValue}
-        docid=${this.email}
+        .docid=${this.email}
       ><slot></slot></vellum-sheet-box>`
   }
 

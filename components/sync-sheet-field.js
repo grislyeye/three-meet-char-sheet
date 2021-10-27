@@ -42,10 +42,10 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
       <vellum-sheet-field
         label=${this.label}
         lines=${this.label}
-        .editable=${this.editable}
         class=${this.className}
         @input=${this.syncValue}
-        docid=${this.email}
+        .docid=${this.email}
+        .editable=${this.editable}
       ><slot></slot></vellum-sheet-field>`
   }
 
