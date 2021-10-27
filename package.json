@@ -1,6 +1,6 @@
 {
   "name": "three-meet-char-sheet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Character sheets for Three Meet ",
   "keywords": [
     "lit",
@@ -10,7 +10,10 @@
   "author": "R.G. Wood <ric@grislyeye.com> (https://grislyeye.com)",
   "license": "Apache 2.0",
   "dependencies": {
-    "vellum-sheet": "^0.3.0"
+    "@kor-ui/kor": "^1.9.1",
+    "firebase": "^9.1.3",
+    "lit-element": "^2.5.1",
+    "vellum-sheet": "^0.4.0"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
@@ -19,11 +22,14 @@
     "grunt-contrib-connect": "^3.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
+    "rollup": "^2.58.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "scribe-cli": "^2.0.5"
   },
   "scripts": {
     "clean": "grunt clean",
     "start": "grunt start",
+    "build:js": "rollup -c",
     "build": "scribe publish --page-format A4 demo.html dist/documents/",
     "deploy": "grunt copy && gh-pages -t -d ./dist/html"
   }

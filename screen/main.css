@@ -4,12 +4,6 @@
   font-family: 'Alegreya', serif;
 }
 
-.char-sheet {
-  box-sizing:border-box;
-
-  width: 8.3in;
-  height: 11.5in;
-
-  margin-top: 0.5cm;
-  page-break-after: always;
+html body {
+  overflow: scroll;
 }
