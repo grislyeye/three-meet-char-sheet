@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element'
 import { initializeApp } from 'firebase/app'
-import { onAuthStateChanged, signInWithPopup, signInWithCredential, GoogleAuthProvider, getAuth, OAuthCredential } from 'firebase/auth'
+import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, getAuth, } from 'firebase/auth'
 import { collection, onSnapshot, query, getFirestore } from 'firebase/firestore'
 import '@kor-ui/kor/components/app-bar';
 import '@kor-ui/kor/components/card';
@@ -48,37 +48,16 @@ class GmScreenApp extends LitElement {
   async connectedCallback() {
     super.connectedCallback()
 
-    const auth = getAuth()
-    const credential = this.credential
+    onAuthStateChanged(getAuth(), async user => {
+      if (!user) await signInWithPopup(auth, new GoogleAuthProvider())
 
-    if (credential) {
-      // TODO Fix: cannot re-authenticate when oauth credentials expire
-      await signInWithCredential(auth, credential)
-        .then(result => {
-          this.db = getFirestore()
-
-          onSnapshot(query(collection(this.db, "stats")), (stats) => {
-            this.sheets =
-              stats
-                .docs
-                .map((doc) => doc.id)
-          })
-        })
-    } else if (!auth.currentUser) {
-      await signInWithPopup(auth, new GoogleAuthProvider())
-        .then(result => {
-          this.credential = GoogleAuthProvider.credentialFromResult(result)
-
-          this.db = getFirestore()
-
-          onSnapshot(query(collection(this.db, "stats")), (stats) => {
-            this.sheets =
-              stats
-                .docs
-                .map((doc) => doc.id)
-          })
-        })
-    }
+      onSnapshot(query(collection(getFirestore(), "stats")), (stats) => {
+        this.sheets =
+          stats
+            .docs
+            .map((doc) => doc.id)
+      })
+    })
   }
 
   set credential(credential) {
