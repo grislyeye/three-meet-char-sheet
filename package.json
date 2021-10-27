@@ -13,7 +13,7 @@
     "@kor-ui/kor": "^1.9.1",
     "firebase": "^9.1.3",
     "lit-element": "^2.5.1",
-    "vellum-sheet": "^0.3.0"
+    "vellum-sheet": "^0.4.0"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
