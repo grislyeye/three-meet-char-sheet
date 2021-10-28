@@ -30,7 +30,8 @@
     "clean": "grunt clean",
     "start": "grunt start",
     "build:js": "rollup -c",
-    "build": "scribe publish --page-format A4 demo.html dist/documents/",
+    "build:pdf": "scribe publish --page-format A4 demo.html dist/documents/",
+    "build": "npm run build:js && npm run build:pdf",
     "deploy": "grunt copy && gh-pages -t -d ./dist/html"
   }
 }
