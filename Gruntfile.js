@@ -26,11 +26,30 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            src: ['path/**', '!**/.git/**', '!**/gh-pages/**'],
+            dest: 'dist/html/'
+          },
+          {
+            expand: true,
+            src: ['dist/components.js'],
+            dest: 'dist/html/'
+          },
+        ],
+      },
+    },
+
   })
 
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-connect')
+  grunt.loadNpmTasks('grunt-contrib-copy')
 
   grunt.registerTask('start', ['connect', 'watch'])
 }

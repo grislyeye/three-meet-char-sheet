@@ -20,6 +20,7 @@
     "grunt-cli": "^1.4.3",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "rollup": "^2.58.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -32,6 +33,6 @@
     "build:js": "rollup -c",
     "build:pdf": "scribe publish --page-format A4 demo.html dist/documents/",
     "deploy": "npm run clean && npm run build && npm run deploy:github",
-    "deploy:github": "gh-pages --dotfiles --remove '*gh-pages*' --dist ./"
+    "deploy:github": "grunt copy && gh-pages --dotfiles --remove '*gh-pages*' --dist ./dist/html/"
   }
 }
