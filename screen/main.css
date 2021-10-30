@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400,400italic,700italic,700);
+
+* {
+  font-family: 'Alegreya', serif;
+}
+
+html body {
+  overflow: scroll;
+}
