@@ -34,6 +34,6 @@
     "build:pdf": "scribe publish --page-format A4 demo.html dist/documents/",
     "build:webapp": "grunt copy && cd dist/html && npm install --only=prod --no-optional",
     "deploy": "npm run clean && npm run build && npm run deploy:gh-pages",
-    "deploy:gh-pages": "gh-pages --dotfiles --remove '.gitignore' --dist ./dist/html/"
+    "deploy:gh-pages": "gh-pages --dist ./dist/html/"
   }
 }

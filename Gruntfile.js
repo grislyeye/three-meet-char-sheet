@@ -37,7 +37,7 @@ module.exports = function (grunt) {
               '.nojekyll',
               '!**/.git/**',
               '!**/gh-pages/**',
-              '!.gitignore',
+              '!**/.gitignore/**',
               '!dist/**',
               '!node_modules/**'
             ],
