@@ -32,7 +32,7 @@
     "build": "npm run build:js && npm run build:pdf",
     "build:js": "rollup -c",
     "build:pdf": "scribe publish --page-format A4 demo.html dist/documents/",
-    "deploy": "npm run clean && npm run build && npm run deploy:github",
-    "deploy:github": "grunt copy && gh-pages --dotfiles --remove '*gh-pages*' --dist ./dist/html/"
+    "deploy": "npm run clean && npm run build && npm run deploy::github-pages",
+    "deploy::github-pages": "grunt copy && gh-pages --dotfiles --remove '*gh-pages*' --dist ./dist/html/"
   }
 }
