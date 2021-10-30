@@ -30,9 +30,21 @@ module.exports = function (grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, src: ['.nojekyll', 'index.html', 'main.css'], dest: 'dist/html', filter: 'isFile'},
-          {expand: true, src: ['node_modules/vellum-sheet/**'], dest: 'dist/html/'},
-          {expand: true, src: ['dist/components.js'], dest: 'dist/html/'},
+          {
+            expand: true,
+            src: [
+              '**',
+              '.nojekyll',
+              '!dist/**',
+              '!node_modules/**'
+            ],
+            dest: 'dist/html/'
+          },
+          {
+            expand: true,
+            src: ['dist/components.js'],
+            dest: 'dist/html/'
+          },
         ],
       },
     },
