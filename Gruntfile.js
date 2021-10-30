@@ -35,9 +35,6 @@ module.exports = function (grunt) {
             src: [
               '**',
               '.nojekyll',
-              '!**/.git/**',
-              '!**/gh-pages/**',
-              '!**/.gitignore/**',
               '!dist/**',
               '!node_modules/**'
             ],
