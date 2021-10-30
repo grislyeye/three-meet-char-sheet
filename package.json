@@ -1,6 +1,6 @@
 {
   "name": "three-meet-char-sheet",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Character sheets for Three Meet ",
   "keywords": [
     "lit",
@@ -20,7 +20,6 @@
     "grunt-cli": "^1.4.3",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-connect": "^3.0.0",
-    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "rollup": "^2.58.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -29,9 +28,10 @@
   "scripts": {
     "clean": "grunt clean",
     "start": "grunt start",
+    "build": "npm run build:js && npm run build:pdf",
     "build:js": "rollup -c",
     "build:pdf": "scribe publish --page-format A4 demo.html dist/documents/",
-    "build": "npm run build:js && grunt copy && npm run build:pdf",
-    "deploy": "grunt copy && gh-pages -t -d ./dist/html"
+    "deploy": "npm run clean && npm run build && npm run deploy:github",
+    "deploy:github": "gh-pages --dotfiles --remove '*gh-pages*' --dist ./"
   }
 }
