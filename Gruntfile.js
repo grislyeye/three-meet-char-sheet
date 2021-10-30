@@ -32,7 +32,12 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            src: ['path/**', '!**/.git/**', '!**/gh-pages/**'],
+            src: [
+              'path/**',
+              '!**/.git/**',
+              '!**/gh-pages/**',
+              '!.gitignore'
+            ],
             dest: 'dist/html/'
           },
           {
