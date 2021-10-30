@@ -34,10 +34,12 @@ module.exports = function (grunt) {
             expand: true,
             src: [
               '**',
+              '.nojekyll',
               '!**/.git/**',
               '!**/gh-pages/**',
               '!.gitignore',
-              '!dist/**'
+              '!dist/**',
+              '!node_modules/**'
             ],
             dest: 'dist/html/'
           },
