@@ -25,10 +25,19 @@ class SyncSheetBox extends SyncValueBehaviour(LitElement) {
       editable: {
         type: Boolean
       },
+      sync: {
+        type: Boolean
+      },
       email: {
         type: String
       }
     }
+  }
+
+  constructor() {
+    super()
+    this.editable = true
+    this.sync = true
   }
 
   get value() {

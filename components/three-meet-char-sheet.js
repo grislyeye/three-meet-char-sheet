@@ -17,6 +17,9 @@ class ThreeMeetCharSheet extends LitElement {
       },
       editable: {
         type: Boolean
+      },
+      sync: {
+        type: Boolean
       }
     }
   }
@@ -197,6 +200,7 @@ class ThreeMeetCharSheet extends LitElement {
   constructor() {
     super()
     this.editable = false
+    this.sync = false
   }
 
   async connectedCallback() {
@@ -225,81 +229,81 @@ class ThreeMeetCharSheet extends LitElement {
 
             <h2>I am</h2>
 
-            <sync-sheet-field label="Title/Character Name" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Title/Character Name" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
 
             <h2>The</h2>
 
-            <sync-sheet-field label="Level/Archetype/Background" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Level/Archetype/Background" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>Who</h2>
 
-            <sync-sheet-field label="Bond" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Bond" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
 
           </div>
 
           <div class="characteristic">
             <h2>But</h2>
 
-            <sync-sheet-field label="Flaw" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Flaw" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
           </div>
 
           <div id="personality-traits" class="characteristic">
             <h2>I am</h2>
 
-            <sync-sheet-field label="Trait 1" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Trait 1" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
 
             <h2>And</h2>
 
-            <sync-sheet-field label="Trait 2" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Trait 2" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
           </div>
 
           <vellum-sheet-group id="allegiances" class="characteristic">
-            <sync-sheet-field label="Major Allegiance" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-            <sync-sheet-field label="Medium Allegiance" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-            <sync-sheet-field label="Minor Allegiance" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Major Allegiance." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Medium Allegiance" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            <sync-sheet-field label="Minor Allegiance" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
           </vellum-sheet-group>
 
         </div>
 
         <vellum-sheet-group id="abilities">
 
-          <sync-sheet-field label="Might" .editable="${this.editable}" .email=${this.email} pattern="^[-+]?[0-9]$" class="box">
+          <sync-sheet-field label="Might" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} pattern="^[-+]?[0-9]$" class="box">
           </sync-sheet-field>
 
-          <sync-sheet-field label="Cunning" .editable="${this.editable}" .email=${this.email} class="box">
+          <sync-sheet-field label="Cunning" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="box">
           </sync-sheet-field>
 
-          <sync-sheet-field label="Wisdom" .editable="${this.editable}" .email=${this.email} class="box">
+          <sync-sheet-field label="Wisdom" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="box">
           </sync-sheet-field>
 
         </vellum-sheet-group>
 
         <vellum-sheet-group id="combat-stats">
 
-          <sync-sheet-field label="Proficiency" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field label="Proficiency." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Health" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field label="Health" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Current Health" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field label="Current Health" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Defence" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field label="Defence" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Melee Damage" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field label="Melee Damage" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Ranged Damage" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field label="Ranged Damage" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
         </vellum-sheet-group>
 
-        <sync-sheet-box id="proficiencies" .editable="${this.editable}" .email=${this.email} label="Proficiencies">
+        <sync-sheet-box id="proficiencies" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} label="Proficiencies">
         </sync-sheet-box>
 
-        <sync-sheet-box id="features" .editable="${this.editable}" .email=${this.email} label="Features">
+        <sync-sheet-box id="features" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} label="Features">
         </sync-sheet-box>
 
-        <sync-sheet-box id="notes" .editable="${this.editable}" .email=${this.email} label="Equipment &amp; Notes">
+        <sync-sheet-box id="notes" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} label="Equipment &amp; Notes">
         </sync-sheet-box>
 
       </vellum-sheet>
