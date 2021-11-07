@@ -23,10 +23,6 @@ class GmScreenSheetView extends LitElement {
         overflow: scroll;
       }
 
-      #view {
-        overflow: scroll;
-      }
-
       #char-sheet {
         background: white;
         font-family: 'Alegreya', serif;
