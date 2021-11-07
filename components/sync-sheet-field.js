@@ -17,6 +17,9 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
       editable: {
         type: Boolean
       },
+      sync: {
+        type: Boolean
+      },
       email: {
         type: String
       }
@@ -26,6 +29,7 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
   constructor() {
     super()
     this.editable = true
+    this.sync = true
   }
 
   get value() {
