@@ -285,9 +285,9 @@ class ThreeMeetCharSheet extends LitElement {
 
           <sync-sheet-field label="Proficiency." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Health" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field id="vellum-sheet-field-health" label="Stamina" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Current Health" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field id="vellum-sheet-field-current-health" label="Current Stamina" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
           <sync-sheet-field label="Defence" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
