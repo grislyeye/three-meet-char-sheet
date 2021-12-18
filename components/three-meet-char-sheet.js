@@ -160,9 +160,6 @@ class ThreeMeetCharSheet extends LitElement {
         margin: 4px;
       }
 
-      .character-content #combat-stats > div + div {
-      }
-
       /* .value */
 
       sync-sheet-field.value.box {

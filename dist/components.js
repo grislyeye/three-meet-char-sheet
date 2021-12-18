@@ -32469,9 +32469,6 @@ class ThreeMeetCharSheet extends LitElement$4 {
         margin: 4px;
       }
 
-      .character-content #combat-stats > div + div {
-      }
-
       /* .value */
 
       sync-sheet-field.value.box {
