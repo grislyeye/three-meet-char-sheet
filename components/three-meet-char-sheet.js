@@ -47,7 +47,7 @@ class ThreeMeetCharSheet extends LitElement {
         max-width: 100%;
         display: grid;
         grid-gap: 1em;
-        grid-template-rows: 35% 35% 27%;
+        grid-template-rows: 15% 41% 41%;
         grid-template-columns: 20% auto 45%;
       }
 
