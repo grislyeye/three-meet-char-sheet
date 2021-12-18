@@ -237,29 +237,6 @@ class ThreeMeetCharSheet extends LitElement {
 
           </div>
 
-          <div class="characteristic">
-            <h2>Who</h2>
-
-            <sync-sheet-field label="Bond" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-
-          </div>
-
-          <div class="characteristic">
-            <h2>But</h2>
-
-            <sync-sheet-field label="Flaw" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-          </div>
-
-          <div id="personality-traits" class="characteristic">
-            <h2>I am</h2>
-
-            <sync-sheet-field label="Trait 1" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-
-            <h2>And</h2>
-
-            <sync-sheet-field label="Trait 2" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-          </div>
-
           <vellum-sheet-group id="allegiances" class="characteristic">
             <sync-sheet-field label="Major Allegiance." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
             <sync-sheet-field label="Medium Allegiance" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
