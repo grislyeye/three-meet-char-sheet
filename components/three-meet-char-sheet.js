@@ -47,7 +47,7 @@ class ThreeMeetCharSheet extends LitElement {
         max-width: 100%;
         display: grid;
         grid-gap: 1em;
-        grid-template-rows: 35% 35% 27%;
+        grid-template-rows: 15% 41% 41%;
         grid-template-columns: 20% auto 45%;
       }
 
@@ -237,29 +237,6 @@ class ThreeMeetCharSheet extends LitElement {
 
           </div>
 
-          <div class="characteristic">
-            <h2>Who</h2>
-
-            <sync-sheet-field label="Bond" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-
-          </div>
-
-          <div class="characteristic">
-            <h2>But</h2>
-
-            <sync-sheet-field label="Flaw" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-          </div>
-
-          <div id="personality-traits" class="characteristic">
-            <h2>I am</h2>
-
-            <sync-sheet-field label="Trait 1" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-
-            <h2>And</h2>
-
-            <sync-sheet-field label="Trait 2" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-          </div>
-
           <vellum-sheet-group id="allegiances" class="characteristic">
             <sync-sheet-field label="Major Allegiance." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
             <sync-sheet-field label="Medium Allegiance" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
@@ -285,9 +262,9 @@ class ThreeMeetCharSheet extends LitElement {
 
           <sync-sheet-field label="Proficiency." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Health" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field id="vellum-sheet-field-health" label="Stamina" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
-          <sync-sheet-field label="Current Health" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          <sync-sheet-field id="vellum-sheet-field-current-health" label="Current Stamina" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
           <sync-sheet-field label="Defence" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
 
