@@ -17,9 +17,6 @@ class ThreeMeetCharSheet extends LitElement {
       },
       editable: {
         type: Boolean
-      },
-      sync: {
-        type: Boolean
       }
     }
   }
@@ -194,26 +191,18 @@ class ThreeMeetCharSheet extends LitElement {
     `;
   }
 
-  constructor() {
-    super()
-    this.editable = false
-    this.sync = false
-  }
-
   async connectedCallback() {
     super.connectedCallback()
 
-    if(this.editable) {
-      initializeApp({
-        apiKey: 'AIzaSyC23ccaZmf-V6Le47vqhfCTaQOG1PN8Ikc',
-        authDomain: 'three-meet-sync.firebaseapp.com',
-        projectId: 'three-meet-sync'
-      })
+    initializeApp({
+      apiKey: 'AIzaSyC23ccaZmf-V6Le47vqhfCTaQOG1PN8Ikc',
+      authDomain: 'three-meet-sync.firebaseapp.com',
+      projectId: 'three-meet-sync'
+    })
 
-      onAuthStateChanged(getAuth(), async user => {
-        if (!user) await signInWithPopup(getAuth(), new GoogleAuthProvider())
-      })
-    }
+    onAuthStateChanged(getAuth(), async user => {
+      if (!user) await signInWithPopup(getAuth(), new GoogleAuthProvider())
+    })
   }
 
   render() {
@@ -226,61 +215,65 @@ class ThreeMeetCharSheet extends LitElement {
 
             <h2>I am</h2>
 
-            <sync-sheet-field label="Title/Character Name" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            ${this.renderField('Title/Character Name', 'small long')}
 
             <h2>The</h2>
 
-            <sync-sheet-field label="Level/Archetype/Background" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            ${this.renderField('Level/Archetype/Background', 'small long')}
 
           </div>
 
           <vellum-sheet-group id="allegiances" class="characteristic">
-            <sync-sheet-field label="Major Allegiance." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-            <sync-sheet-field label="Medium Allegiance" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
-            <sync-sheet-field label="Minor Allegiance" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="small long"></sync-sheet-field>
+            ${this.renderField('Major Allegiance', 'small long')}
+            ${this.renderField('Medium Allegiance', 'small long')}
+            ${this.renderField('Minor Allegiance', 'small long')}
           </vellum-sheet-group>
 
         </div>
 
         <vellum-sheet-group id="abilities">
 
-          <sync-sheet-field label="Might" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} pattern="^[-+]?[0-9]$" class="box">
-          </sync-sheet-field>
+          ${this.renderField('Might', 'box')}
 
-          <sync-sheet-field label="Cunning" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="box">
-          </sync-sheet-field>
+          ${this.renderField('Cunning', 'box')}
 
-          <sync-sheet-field label="Wisdom" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="box">
-          </sync-sheet-field>
+          ${this.renderField('Wisdom', 'box')}
 
         </vellum-sheet-group>
 
         <vellum-sheet-group id="combat-stats">
 
-          <sync-sheet-field label="Proficiency." sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          ${this.renderField('Proficiency.', 'horizontal stat value box')}
 
-          <sync-sheet-field id="vellum-sheet-field-health" label="Stamina" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          ${this.renderField('Stamina', 'horizontal stat value box', 'vellum-sheet-field-health')}
 
-          <sync-sheet-field id="vellum-sheet-field-current-health" label="Current Stamina" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          ${this.renderField('Current Stamina', 'horizontal stat value box', 'vellum-sheet-field-current-health')}
 
-          <sync-sheet-field label="Defence" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          ${this.renderField('Defence', 'horizontal stat value box')}
 
-          <sync-sheet-field label="Melee Damage" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          ${this.renderField('Melee Damage', 'horizontal stat value box')}
 
-          <sync-sheet-field label="Ranged Damage" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} class="horizontal stat value box"></sync-sheet-field>
+          ${this.renderField('Ranged Damage', 'horizontal stat value box')}
 
         </vellum-sheet-group>
 
-        <sync-sheet-box id="proficiencies" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} label="Proficiencies">
-        </sync-sheet-box>
+        ${this.renderBox('proficiencies', 'Proficiencies')}
 
-        <sync-sheet-box id="features" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} label="Features">
-        </sync-sheet-box>
+        ${this.renderBox('features', 'Features')}
 
-        <sync-sheet-box id="notes" .sync="${this.sync}" .editable="${this.editable}" .email=${this.email} label="Equipment &amp; Notes">
-        </sync-sheet-box>
+        ${this.renderBox('notes', 'Equipment & Notes')}
 
       </vellum-sheet>
+    `
+  }
+
+  renderField(label, classes, id) {
+    return html`<sync-sheet-field id=${id ? id : ''} label="${label}" ?editable=${this.editable === true} sync .email=${this.email} class="${classes}"></sync-sheet-field>`
+  }
+
+  renderBox(id, label) {
+    return html`
+      <sync-sheet-box id="${id}" label="${label}" ?editable=${this.editable === true} sync .email=${this.email}></sync-sheet-box>
     `
   }
 

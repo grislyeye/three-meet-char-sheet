@@ -8,6 +8,9 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
 
   static get properties() {
     return {
+      id: {
+        type: String
+      },
       label: {
         type: String
       },
@@ -17,19 +20,10 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
       editable: {
         type: Boolean
       },
-      sync: {
-        type: Boolean
-      },
       email: {
         type: String
       }
     }
-  }
-
-  constructor() {
-    super()
-    this.editable = true
-    this.sync = true
   }
 
   get value() {
@@ -49,7 +43,8 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
         class=${this.className}
         @input=${this.syncValue}
         .docid=${this.email}
-        .editable=${this.editable}
+        sync
+        ?editable=${this.editable}
       ><slot></slot></vellum-sheet-field>`
   }
 
