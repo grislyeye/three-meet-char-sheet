@@ -35,6 +35,10 @@ class GmScreenApp extends LitElement {
     super()
 
     this.sheets = []
+  }
+
+  async connectedCallback() {
+    super.connectedCallback()
 
     // TODO Dry: Firebase code also in sync-sheet
     initializeApp({
@@ -42,13 +46,9 @@ class GmScreenApp extends LitElement {
       authDomain: 'three-meet-sync.firebaseapp.com',
       projectId: 'three-meet-sync'
     })
-  }
-
-  async connectedCallback() {
-    super.connectedCallback()
 
     onAuthStateChanged(getAuth(), async user => {
-      if (!user) await signInWithPopup(auth, new GoogleAuthProvider())
+      if (!user) await signInWithPopup(getAuth(), new GoogleAuthProvider())
 
       onSnapshot(query(collection(getFirestore(), "stats")), (stats) => {
         this.sheets =
