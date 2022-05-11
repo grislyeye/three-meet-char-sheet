@@ -25,19 +25,10 @@ class SyncSheetBox extends SyncValueBehaviour(LitElement) {
       editable: {
         type: Boolean
       },
-      sync: {
-        type: Boolean
-      },
       email: {
         type: String
       }
     }
-  }
-
-  constructor() {
-    super()
-    this.editable = true
-    this.sync = true
   }
 
   get value() {
@@ -53,10 +44,11 @@ class SyncSheetBox extends SyncValueBehaviour(LitElement) {
     return html`
       <vellum-sheet-box
         label=${this.label}
-        .editable=${this.editable}
         class=${this.className}
         @input=${this.syncValue}
         .docid=${this.email}
+        sync
+        ?editable=${this.editable}
       ><slot></slot></vellum-sheet-box>`
   }
 
