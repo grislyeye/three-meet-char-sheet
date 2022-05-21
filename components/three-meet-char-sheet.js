@@ -118,8 +118,8 @@ class ThreeMeetCharSheet extends LitElement {
       /* attributes */
 
       .character-content #abilities {
-        grid-column: 1 / 1;
-        grid-row:  2 / 2;
+        grid-column: 2 / 2;
+        grid-row:  3 / 3;
 
         display: flex;
         flex-direction: column;
@@ -147,7 +147,7 @@ class ThreeMeetCharSheet extends LitElement {
         flex-direction: column;
 
         grid-column: 2 / 2;
-        grid-row:  2 / 2;
+        grid-row:  3 / 3;
 
         padding: 4px;
       }
@@ -223,6 +223,13 @@ class ThreeMeetCharSheet extends LitElement {
 
           </div>
 
+          <div class="characteristic">
+
+            <h2>Who is</h2>
+
+            <sync-sheet-field  label="Proficiencies" editable class="small long">Talented (+6) and Insightful (+4)</sync-sheet-field>
+          </div>
+
           <vellum-sheet-group id="allegiances" class="characteristic">
             ${this.renderField('Major Allegiance', 'small long')}
             ${this.renderField('Medium Allegiance', 'small long')}
@@ -258,8 +265,6 @@ class ThreeMeetCharSheet extends LitElement {
         </vellum-sheet-group>
 
         ${this.renderBox('proficiencies', 'Proficiencies')}
-
-        ${this.renderBox('features', 'Features')}
 
         ${this.renderBox('notes', 'Equipment & Notes')}
 
