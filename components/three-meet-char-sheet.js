@@ -53,11 +53,6 @@ class ThreeMeetCharSheet extends LitElement {
         grid-template-columns: 20% auto 45%;
       }
 
-      .character-content > div,
-      .character-content > header,
-      .character-content > sync-sheet-box {
-      }
-
       .character-content sync-sheet-box ul li {
         margin: 0.5em;
         padding: 0;
