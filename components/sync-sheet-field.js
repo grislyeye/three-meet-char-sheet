@@ -22,6 +22,9 @@ class SyncSheetField extends SyncValueBehaviour(LitElement) {
       },
       email: {
         type: String
+      },
+      sync: {
+        type: Boolean
       }
     }
   }

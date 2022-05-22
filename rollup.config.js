@@ -1,4 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve'
+import image from '@rollup/plugin-image'
 
 export default [
   {
@@ -8,7 +9,8 @@ export default [
       format: 'cjs'
     },
     plugins: [
-      resolve()
+      resolve(),
+      image()
     ]
   }
 ]

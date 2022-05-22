@@ -27,6 +27,9 @@ class SyncSheetBox extends SyncValueBehaviour(LitElement) {
       },
       email: {
         type: String
+      },
+      sync: {
+        type: Boolean
       }
     }
   }

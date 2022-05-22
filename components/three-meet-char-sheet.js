@@ -5,6 +5,8 @@ import './sync-sheet-field.js'
 import './sync-sheet-box.js'
 import '../node_modules/vellum-sheet/dist/vellum-sheet.js'
 import '../node_modules/vellum-sheet/dist/vellum-sheet-group.js'
+import SyncOnIcon from './assets/sync-on-icon.png'
+import SyncOffIcon from './assets/sync-off-icon.png'
 
 class ThreeMeetCharSheet extends LitElement {
 
@@ -16,6 +18,9 @@ class ThreeMeetCharSheet extends LitElement {
         type: String
       },
       editable: {
+        type: Boolean
+      },
+      sync: {
         type: Boolean
       }
     }
@@ -44,13 +49,8 @@ class ThreeMeetCharSheet extends LitElement {
         max-width: 100%;
         display: grid;
         grid-gap: 1em;
-        grid-template-rows: 15% 41% 41%;
+        grid-template-rows: 1% 15% 41% 41%;
         grid-template-columns: 20% auto 45%;
-      }
-
-      .character-content > div,
-      .character-content > header,
-      .character-content > sync-sheet-box {
       }
 
       .character-content sync-sheet-box ul li {
@@ -66,10 +66,34 @@ class ThreeMeetCharSheet extends LitElement {
         border: 0;
       }
 
+      /* a.sync.toggle */
+
+      a.toggle {
+        grid-row: 1 / 1;
+        grid-column: 3 / 3;
+        justify-self: end;
+        visibility : hidden;
+      }
+
+      a.toggle img {
+        width: 15px;
+        height 15px;
+        z-index: 1;
+        visibility : hidden;
+      }
+
+      a.toggle[on] {
+        visibility : visible;
+      }
+
+      a.toggle[on] img {
+        visibility : visible;
+      }
+
       /* .characteristics */
 
       #characteristics {
-        grid-row: 1 / 1;
+        grid-row: 2 / 2;
         grid-column: 1 / 4;
         display: flex;
         flex-direction: column;
@@ -78,7 +102,10 @@ class ThreeMeetCharSheet extends LitElement {
       .characteristic {
         display: flex;
         justify-content: flex-end;
-        margin: 0.5em;
+        margin-top: -2em;
+        margin-bottom: 0.5em;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
       }
 
       .characteristic sync-sheet-field {
@@ -119,7 +146,7 @@ class ThreeMeetCharSheet extends LitElement {
 
       .character-content #abilities {
         grid-column: 1 / 1;
-        grid-row:  2 / 2;
+        grid-row:  3 / 3;
 
         display: flex;
         flex-direction: column;
@@ -147,7 +174,7 @@ class ThreeMeetCharSheet extends LitElement {
         flex-direction: column;
 
         grid-column: 2 / 2;
-        grid-row:  2 / 2;
+        grid-row:  3 / 3;
 
         padding: 4px;
       }
@@ -176,22 +203,27 @@ class ThreeMeetCharSheet extends LitElement {
 
       .character-content #proficiencies {
         grid-column: 1 / 3;
-        grid-row:  3 / 3;
+        grid-row:  4 / 4;
       }
 
       .character-content #features {
         grid-column: 3 / 3;
-        grid-row:  2 / 2;
+        grid-row:  3 / 3;
       }
 
       .character-content #notes {
         grid-column: 3 / 4;
-        grid-row:  3 / 3;
+        grid-row:  4 / 4;
       }
     `;
   }
 
-  async connectedCallback() {
+  constructor() {
+    super()
+    this.sync = false
+  }
+
+  connectedCallback() {
     super.connectedCallback()
 
     initializeApp({
@@ -200,14 +232,17 @@ class ThreeMeetCharSheet extends LitElement {
       projectId: 'three-meet-sync'
     })
 
-    onAuthStateChanged(getAuth(), async user => {
-      if (!user) await signInWithPopup(getAuth(), new GoogleAuthProvider())
+    onAuthStateChanged(getAuth(), user => {
+      this.sync = user !== null
     })
   }
 
   render() {
     return html`
+
       <vellum-sheet class="character-content">
+
+        <a class="sync toggle" href="#" @click=${this.toggleSync} ?on=${this.editable} title="Toggle sync"><img src="${this.sync ? SyncOnIcon : SyncOffIcon}" alt="Sync toggle icon"></a>
 
         <div id="characteristics">
 
@@ -268,13 +303,22 @@ class ThreeMeetCharSheet extends LitElement {
   }
 
   renderField(label, classes, id) {
-    return html`<sync-sheet-field id=${id ? id : ''} label="${label}" ?editable=${this.editable === true} sync .email=${this.email} class="${classes}"></sync-sheet-field>`
+    return html`<sync-sheet-field id=${id ? id : ''} label="${label}" ?editable=${this.editable === true} ?sync=${this.sync === true} .email=${this.email} class="${classes}"></sync-sheet-field>`
   }
 
   renderBox(id, label) {
     return html`
-      <sync-sheet-box id="${id}" label="${label}" ?editable=${this.editable === true} sync .email=${this.email}></sync-sheet-box>
+      <sync-sheet-box id="${id}" label="${label}" ?editable=${this.editable === true} ?sync=${this.sync === true} .email=${this.email}></sync-sheet-box>
     `
+  }
+
+  async toggleSync() {
+    if (this.editable) {
+      if(this.sync) {
+        this.sync = false
+        return await getAuth().signOut()
+      } else return await signInWithPopup(getAuth(), new GoogleAuthProvider())
+    }
   }
 
 }

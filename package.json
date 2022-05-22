@@ -1,6 +1,6 @@
 {
   "name": "three-meet-char-sheet",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Character sheets for Three Meet ",
   "keywords": [
     "lit",
@@ -11,11 +11,12 @@
   "license": "Apache 2.0",
   "dependencies": {
     "@kor-ui/kor": "^1.9.1",
-    "lit-element": "^2.5.1",
     "firebase": "^9.8.1",
+    "lit-element": "^2.5.1",
     "vellum-sheet": "^0.5.1"
   },
   "devDependencies": {
+    "@rollup/plugin-image": "^2.1.1",
     "gh-pages": "^4.0.0",
     "grunt-cli": "^1.4.3",
     "grunt-contrib-clean": "^2.0.1",
