@@ -250,7 +250,7 @@ class ThreeMeetCharSheet extends LitElement {
 
             <h2>I am</h2>
 
-            ${this.renderField('Title/Character Name', 'small long')}
+            ${this.renderField('Title/Character Name (Pronouns)', 'small long', 'vellum-sheet-field-titlecharacter-name')}
 
             <h2>The</h2>
 
